@@ -1,0 +1,13 @@
+{
+  "name": "awesomeem-demo",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-02-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "awesomeem-demo",
+      "database_id": "local"
+    }
+  ]
+}

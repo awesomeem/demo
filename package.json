@@ -1,0 +1,22 @@
+{
+  "name": "@awesomeem/demo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Demo: EmDash content served by Hono with swappable themes",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts --port 8788",
+    "seed": "wrangler d1 execute awesomeem-demo --local --file=seed.sql",
+    "seed:remote": "wrangler d1 execute awesomeem-demo --remote --file=seed.sql",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@awesomeem/emdash-render": "^0.1.0",
+    "@awesomeem/theme-minimal": "^0.1.0",
+    "hono": "^4.7.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.80.0",
+    "@cloudflare/workers-types": "^4.20260305.1"
+  }
+}
