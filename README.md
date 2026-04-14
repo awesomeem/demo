@@ -14,16 +14,17 @@ After clicking Deploy, Cloudflare will:
 2. Create a Worker on your account.
 3. Create a D1 database and wire the `DB` binding.
 
-One manual step post-deploy — populate the database:
+Before seed is run, the site renders an empty state with instructions. One manual step post-deploy — populate the database:
 
 ```bash
 git clone https://github.com/<your-username>/demo
 cd demo
 npm install
-npx wrangler d1 execute awesomeem-demo --remote --file=seed.sql
+npx wrangler login             # auth the same CF account the deploy used
+npm run seed:remote            # wrangler d1 execute ... --remote --file=seed.sql
 ```
 
-Open your Worker URL. You should see the seed posts rendered.
+Refresh your Worker URL. You should see the seed posts rendered.
 
 Free-tier limits (plenty for a demo): 100k requests/day on Workers, 5 GB + 25M row reads/day on D1.
 
